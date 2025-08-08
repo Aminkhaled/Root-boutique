@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rootboutique Layout - EN</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Social Icons -->
+<div class="social-icons">
+    <a href="#"><img src="images/whatsapp.jpg" width="150" alt="WhatsApp"></a>
+    <a href="#"><img src="images/instagram.png" width="150" alt="Instagram"></a>
+    <a href="#"><img src="images/tiktok.png" width="150" alt="TikTok"></a>
+</div>
+
+<div class="container-fluid main-wrap">
+    <div class="row row-no-gutters">
+
+        <!-- Left hero -->
+        <div class="col-lg-6 p-0 position-relative hero-left">
+            <img src="images/background.png" class="img-fluid" alt="Rootboutique Bags">
+            <div class="hero-actions">
+                <a class="btn-round text-btn" href="index.html">AR</a>
+                <button class="btn-round" aria-label="Search" onclick="showSearch()"><i class="bi bi-search"></i></button>
+                <button class="btn-round" aria-label="Cart" onclick="showCart()"><i class="bi bi-bag"></i></button>
+                <button class="btn-round" aria-label="Menu" onclick="showMenu()"><i class="bi bi-list"></i></button>
+            </div>
+        </div>
+
+        <!-- Right side (scrolling pane) -->
+        <div class="col-lg-6 right-pane">
+
+            <!-- ============ MAIN CONTENT ============ -->
+            <div id="mainContent">
+                <!-- pre-categories (hide when sticky) -->
+                <div id="preCats" class="pre-cats">
+                    <div class="shop-header d-flex justify-content-start">
+                        <div class="shop-brand">
+                            <img class="logo" src="images/logo.png" alt="mt">
+                            <div>
+                                <h6 class="shop-title">Root Boutique</h6>
+                                <div class="shop-sub">Your hair is in our care.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-section">
+                        <div class="delivery-actions">
+                            <button class="btn btn-outline-secondary ms-2">Pickup</button>
+                            <button class="btn btn-outline-secondary">Delivery</button>
+                        </div>
+
+                        <div class="delivery-rows">
+                            <div class="delivery-row">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div>
+                                        <small>to</small>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="link-green">Change</span>
+                                            <strong>Select area</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-link-45deg"></i>
+                                    <div><small>Delivery</small></div>
+                                </div>
+                            </div>
+
+                            <div class="delivery-row">
+                                <div class="d-flex align-items-center gap-2"><i class="bi bi-info-circle"></i></div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-clock"></i>
+                                    <div><small>Earliest arrival</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls-strip">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="showFilters()">Filter & Sort</button>
+                        <div class="controls-icons">
+                            <div class="i-btn" title="Sort" onclick="showFilters()"><i class="bi bi-arrow-down-up"></i></div>
+                            <div class="i-btn" title="Filter" onclick="showFilters()"><i class="bi bi-funnel"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pre-cats -->
+
+                <!-- Sticky categories -->
+                <div class="categories-row" id="catsBar">
+                    <div class="cat-scroll" id="catScroll">
+                        <div class="cat-chip" data-target="#consult"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>Consultation</span></div>
+                        <div class="cat-chip" data-target="#bestsellers"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>Bestsellers</span></div>
+                        <div class="cat-chip" data-target="#henna"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>Henna & Sidr</span></div>
+                        <div class="cat-chip" data-target="#oils"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>Hair Oils</span></div>
+                        <div class="cat-chip" data-target="#special"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>Special Edition</span></div>
+                        <div class="cat-chip" data-target="#fragrance"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>Hair Fragrance</span></div>
+                    </div>
+                </div>
+
+                <!-- Sections -->
+                <section id="consult">
+                    <div class="section-title"><i class="bi bi-chevron-down"></i> <span>Consultation</span></div>
+                    <div class="consult-card">
+                        <img class="consult-img" src="images/consult.jpg" alt="Consultation">
+                        <h5 class="consult-title mt-3">Book a Consultation</h5>
+                        <p class="consult-desc mt-2">Scalp check and hair concerns with Specialist</p>
+                        <p class="price mt-2">KD 15.000</p>
+                        <button class="btn-add mt-2" type="button">Add <span>+</span></button>
+                    </div>
+                </section>
+
+                <section id="bestsellers" class="mt-3">
+                    <div class="section-title"><span>Bestsellers</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="black-garlic" src="images/image.jpeg" alt="">
+                                    <div class="product-title">Root boutique Black Garlic Oil</div>
+                                    <p class="product-desc mt-2">A blend enriched with black garlic and natural oils to thicken hair and reduce hair fall.</p>
+                                    <p class="price mt-2">KD 19.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="black-garlic">Add <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="sidr-herbs" src="images/image1.jpeg" alt="">
+                                    <div class="product-title">Root boutique Sidr with Herbs</div>
+                                    <p class="product-desc mt-2">A natural mask of pure sidr leaves supported by an effective herbal mix.</p>
+                                    <p class="price mt-2">KD 12.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="sidr-herbs">Add <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="oils" class="mt-3">
+                    <div class="section-title"><span>Hair Oils</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="herbal-oil" src="images/image2.jpeg" alt="">
+                                    <div class="product-title">Herbal Hair Oil</div>
+                                    <p class="product-desc">A blend of herbal oils to nourish hair and soothe the scalp.</p>
+                                    <p class="price mt-2">KD 9.900</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="herbal-oil">Add <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="shine-oil" src="images/image3.jpeg" alt="">
+                                    <div class="product-title">Shine Hair Oil</div>
+                                    <p class="product-desc">Gives a healthy shine and reduces tangles.</p>
+                                    <p class="price mt-2">KD 7.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="shine-oil">Add <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="henna" class="mt-3">
+                    <div class="section-title"><span>Henna & Sidr</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="herbal-sidr" src="images/image4.jpg" alt="">
+                                    <div class="product-title">Sidr with Herbs</div>
+                                    <p class="product-desc">A natural blend that boosts hair density.</p>
+                                    <p class="price mt-2">KD 6.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="herbal-sidr">Add <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="scalp-sidr" src="images/image5.jpeg" alt="">
+                                    <div class="product-title">Sidr Scalp Strengthener</div>
+                                    <p class="product-desc">Supports scalp health and reduces hair fall.</p>
+                                    <p class="price mt-2">KD 5.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="scalp-sidr">Add <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="special" class="mt-3">
+                    <div class="section-title"><span>Special Edition</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="special-product" src="images/image.jpeg" alt="">
+                                    <div class="product-title">Special Product</div>
+                                    <p class="product-desc">Limited edition with a unique scent.</p>
+                                    <p class="price mt-2">KD 11.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="special-product">Add <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="special-package" src="images/image1.jpeg" alt="">
+                                    <div class="product-title">Special Package</div>
+                                    <p class="product-desc">A curated set for complete care.</p>
+                                    <p class="price mt-2">KD 14.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="special-package">Add <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="fragrance" class="mt-3 mb-4">
+                    <div class="section-title"><span>Hair Fragrance</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="oriental-perfume" src="images/image2.jpeg" alt="">
+                                    <div class="product-title">Oriental Hair Perfume</div>
+                                    <p class="product-desc">A luxurious touch that lasts long.</p>
+                                    <p class="price mt-2">KD 9.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="oriental-perfume">Add <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="floral-perfume" src="images/image6.jpeg" alt="">
+                                    <div class="product-title">Floral Hair Perfume</div>
+                                    <p class="product-desc">A soft floral fragrance.</p>
+                                    <p class="price mt-2">KD 8.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="floral-perfume">Add <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- sticky CTA -->
+                <div class="sticky-region-cta">
+                    <button class="btn-region" type="button" onclick="showLocation()">Choose your area</button>
+                </div>
+            </div>
+            <!-- ============ /MAIN CONTENT ============ -->
+
+            <!-- ============ FILTERS VIEW ============ -->
+            <div id="filtersView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6>Filter & Sort</h6><span></span>
+                </div>
+
+                <div class="filters-block-title">
+                    <div class="d-flex align-items-center gap-2"><i class="bi bi-arrow-down-up"></i><span>Sort</span></div>
+                    <span class="filters-clear" onclick="clearSort()">Clear</span>
+                </div>
+                <div class="px-2">
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="priceAsc"><span>Low to High</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="priceDesc"><span>High to Low</span></label>
+                        </div>
+                        <div class="sort-right-label">Price</div>
+                    </div>
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="nameAZ"><span>A - Z</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="nameZA"><span>Z - A</span></label>
+                        </div>
+                        <div class="sort-right-label">Name</div>
+                    </div>
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="dateNew"><span>Newest</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="dateOld" checked><span>Oldest</span></label>
+                        </div>
+                        <div class="sort-right-label">Date</div>
+                    </div>
+                </div>
+
+                <div class="filters-block-title">
+                    <div class="d-flex align-items-center gap-2"><i class="bi bi-funnel"></i><span>Filters</span></div>
+                    <span class="filters-clear" onclick="clearFilters()">Clear</span>
+                </div>
+
+                <div class="acc acc-open">
+                    <div class="acc-row" onclick="this.parentElement.classList.toggle('acc-open')">
+                        <div class="fw-bold">Categories</div><i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="acc-body">
+                        <div class="cats-list">
+                            <div class="cat-item">Consultation</div><div class="cat-item">Bestsellers</div>
+                            <div class="cat-item">Special Edition</div><div class="cat-item">Henna & Sidr</div>
+                            <div class="cat-item">Hair Oils</div><div class="cat-item">Herbal Mix</div>
+                            <div class="cat-item">Packages</div><div class="cat-item">Hair Accessories</div>
+                            <div class="cat-item">Hair Fragrance</div><div class="cat-item">Scalp Cleansing</div>
+                            <div class="cat-item">Mini to Try</div><div class="cat-item">Face Care</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc acc-open">
+                    <div class="acc-row" onclick="this.parentElement.classList.toggle('acc-open')">
+                        <div class="fw-bold">Price</div><i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="acc-body">
+                        <div class="price-slider">
+                            <div class="range-wrap">
+                                <input id="priceMin" type="range" min="1" max="99" value="1" oninput="syncPrice()">
+                                <input id="priceMax" type="range" min="1" max="99" value="99" oninput="syncPrice()">
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold"><span id="minVal">1</span><span id="maxVal">99</span></div>
+                        </div>
+                        <div class="filters-actions">
+                            <button class="btn btn-light" onclick="clearPrice()">Clear</button>
+                            <button class="btn btn-outline-secondary" disabled>Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filters-block-title" style="justify-content:flex-start">Available Products</div>
+            </div>
+            <!-- ============ /FILTERS VIEW ============ -->
+
+            <!-- ============ MENU VIEW ============ -->
+            <div id="menuView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6>Menu</h6><span></span>
+                </div>
+                <div class="px-2">
+                    <div class="filters-block-title">Links</div>
+                    <div class="px-3">
+                        <div class="py-3 border-bottom">My Cart</div>
+                        <div class="py-3 border-bottom">Menu</div>
+                        <div class="py-3">My Orders</div>
+                    </div>
+                    <div class="filters-block-title">Sign in with</div>
+                    <div class="px-3">
+                        <div class="py-3 border-bottom">Email</div>
+                        <div class="py-3 border-bottom">Apple</div>
+                        <div class="py-3">Google</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============ /MENU VIEW ============ -->
+
+            <!-- ============ PRODUCT DETAILS VIEW ============ -->
+            <div id="productView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6 id="pdTitleHead">Product Details</h6><span></span>
+                </div>
+
+                <!-- Hero image -->
+                <img id="pdHero" class="pd-hero" src="" alt="">
+
+                <!-- Title / price / qty -->
+                <div class="px-3 pt-3 pb-2">
+                    <div class="d-flex align-items-start justify-content-between flex-wrap">
+                        <div class="mb-2">
+                            <h5 id="pdTitle" class="pd-title mb-1"></h5>
+                            <div id="pdPrice" class="price">KD 0.000</div>
+                        </div>
+                        <div class="mt-1">
+                            <div class="qty-wrap">
+                                <button type="button" onclick="changeQty(-1)">–</button>
+                                <span id="pdQty">1</span>
+                                <button type="button" onclick="changeQty(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description blocks -->
+                <div class="pd-sec">
+                    <h6>Description</h6>
+                    <div class="mb-2"><strong class="ms-2">Size:</strong> <span id="pdSize">—</span></div>
+                    <div class="mb-2"><strong class="ms-2">Details:</strong> <span id="pdDesc">—</span></div>
+                    <div class="mb-2"><strong class="ms-2">How to use:</strong></div>
+                    <ul id="pdUsage" class="pd-bullets"></ul>
+                    <div class="mt-3"><strong>Important note:</strong>
+                        <div id="pdNote" class="mt-1"></div>
+                    </div>
+                </div>
+
+                <!-- Gift -->
+                <div class="pd-sec">
+                    <h6>Gift</h6>
+                    <div class="pd-gift-card d-flex align-items-center justify-content-between">
+                        <div>Gift Wrapping</div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="text-success fw-bold">+ KD 2.000</div>
+                            <input id="giftWrap" type="checkbox">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related -->
+                <div class="pd-sec">
+                    <h6>Add to your order…</h6>
+                    <div class="related-scroll" id="relatedStrip">
+                        <div class="related-card product-card">
+                            <img class="product-img open-pd" data-pd="sidr-herbs" src="images/image1.jpeg" alt="">
+                            <div class="product-title">Sidr with Herbs</div>
+                            <p class="price mt-2">KD 12.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img open-pd" data-pd="black-garlic" src="images/image.jpeg" alt="">
+                            <div class="product-title">Black Garlic Oil</div>
+                            <p class="price mt-2">KD 19.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image2.jpeg" alt="">
+                            <div class="product-title">Herbal Hair Oil</div>
+                            <p class="price mt-2">KD 9.900</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image2.jpeg" alt="">
+                            <div class="product-title">Oriental Hair Perfume</div>
+                            <p class="price mt-2">KD 9.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image5.jpeg" alt="">
+                            <div class="product-title">Sidr Scalp Strengthener</div>
+                            <p class="price mt-2">KD 5.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image1.jpeg" alt="">
+                            <div class="product-title">Special Package</div>
+                            <p class="price mt-2">KD 14.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image3.jpeg" alt="">
+                            <div class="product-title">Shine Hair Oil</div>
+                            <p class="price mt-2">KD 7.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image6.jpeg" alt="">
+                            <div class="product-title">Floral Hair Perfume</div>
+                            <p class="price mt-2">KD 8.500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share strip -->
+                <div class="share-strip">
+                    <button id="shareBtn" class="share-btn" type="button">
+                        <i class="bi bi-share"></i>
+                        <span>Share with a friend</span>
+                    </button>
+                </div>
+
+                <!-- Sticky bottom add bar -->
+                <div class="sticky-addbar">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="price" id="pdFinalPrice">KD 0.000</div>
+                    </div>
+                    <button class="btn-green">Add to cart</button>
+                </div>
+            </div>
+            <!-- ============ /PRODUCT DETAILS VIEW ============ -->
+
+            <!-- ============ SEARCH VIEW ============ -->
+            <div id="searchView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6>Search…</h6><span></span>
+                </div>
+                <div class="search-wrap">
+                    <div class="input-group">
+                        <input id="searchInput" type="search" class="form-control" placeholder="Search for a product">
+                        <button class="btn btn-outline-secondary" id="searchBtn"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <div id="searchResults" class="search-list"></div>
+                <div id="searchEmpty" class="empty-wrap">
+                    <div class="empty-icon"><i class="bi bi-search"></i></div>
+                    Search for a product
+                </div>
+            </div>
+            <!-- ============ /SEARCH VIEW ============ -->
+
+            <!-- ============ CART VIEW ============ -->
+            <div id="cartView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6>Shopping Cart</h6><span></span>
+                </div>
+
+                <div class="px-3 py-3 border-bottom">
+                    <label class="form-label mb-2">Promotions</label>
+                    <input type="text" class="form-control" placeholder="Enter coupon code">
+                </div>
+
+                <div class="empty-wrap">
+                    <div class="empty-icon">
+                        <img src="images/basket.png" alt="cart img" >
+                    </div>
+                    <div class="mb-2 fw-bold">Your cart is empty</div>
+                    <div class="mb-3">Add some products to the cart</div>
+                    <button class="btn btn-outline-success" onclick="showMain()">Start shopping</button>
+                </div>
+            </div>
+            <!-- ============ /CART VIEW ============ -->
+
+            <!-- ============ LOCATION VIEW ============ -->
+            <div id="locationView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="Back"><i class="bi bi-chevron-left"></i></button>
+                    <h6>Select Area</h6><span></span>
+                </div>
+
+                <div class="wrap">
+                    <!-- method -->
+                    <div class="block-title">Method</div>
+                    <div class="method-row">
+                        <div class="method-card" id="pickMethod">
+                            <i class="bi bi-person-walking"></i><span class="lbl">Pickup</span>
+                        </div>
+                        <div class="method-card active" id="delMethod">
+                            <i class="bi bi-car-front"></i><span class="lbl">Delivery</span>
+                        </div>
+                    </div>
+
+                    <!-- country -->
+                    <div class="block-title">Country</div>
+                    <div class="country-row">
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/xx.png" alt="World"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/bh.png" alt="Bahrain"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/sa.png" alt="Saudi"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/ae.png" alt="UAE"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/om.png" alt="Oman"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"></div>
+                        <div class="flag-pill active"><img src="https://flagcdn.com/w40/kw.png" alt="Kuwait"></div>
+                    </div>
+
+                    <!-- address/search -->
+                    <div class="block-title">Address</div>
+                    <div class="addr-input mb-2">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search...">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- governorates -->
+                    <div class="block-title">Governorate</div>
+
+                    <div class="gov-list">
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Capital</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Abdullah Al-Salem</button>
+                                <button class="area">Adailiya</button>
+                                <button class="area">Al-Nuzha</button>
+                                <button class="area">Hadeyek Al-Soor</button>
+                                <button class="area">Bneid Al-Qar</button>
+                                <button class="area">Al-Da'iya</button>
+                                <button class="area">Dasma</button>
+                                <button class="area">Dasman</button>
+                                <button class="area">Doha</button>
+                                <button class="area">Doha Chalets</button>
+                                <button class="area">Faiha</button>
+                                <button class="area">Granada</button>
+                                <button class="area">Hessa Al-Mubarak</button>
+                                <button class="area">Jaber Al-Ahmad</button>
+                                <button class="area">Al-Jazira</button>
+                                <button class="area">Al-Qairawan</button>
+                                <button class="area">Kaifan</button>
+                                <button class="area">Khaldiya</button>
+                            </div>
+                        </details>
+
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Ahmadi</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Fahaheel</button>
+                                <button class="area">Mangaf</button>
+                                <button class="area">Dhahr</button>
+                                <button class="area">Hadiya</button>
+                                <button class="area">Abu Fatira</button>
+                            </div>
+                        </details>
+
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Mubarak Al-Kabeer</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Sabhan</button>
+                                <button class="area">Al-Qusour</button>
+                                <button class="area">Al-Adan</button>
+                                <button class="area">Al-Qurain</button>
+                            </div>
+                        </details>
+
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Hawalli</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Salmiya</button>
+                                <button class="area">Jabriya</button>
+                                <button class="area">Hawalli</button>
+                                <button class="area">Bayan</button>
+                            </div>
+                        </details>
+
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Jahra</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Jahra</button>
+                                <button class="area">Sulaibiya</button>
+                                <button class="area">Al-Naseem</button>
+                            </div>
+                        </details>
+
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>Farwaniya</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">Farwaniya</button>
+                                <button class="area">Khaitan</button>
+                                <button class="area">Omariya</button>
+                                <button class="area">Rabiya</button>
+                            </div>
+                        </details>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Share fallback modal -->
+<div class="modal fade share-modal" id="shareModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Share link</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 small text-muted" id="shareLinkBox"></div>
+                <div class="d-flex flex-wrap gap-3">
+                    <a class="share-icon" id="wapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+                    <a class="share-icon" id="gmail" target="_blank" rel="noopener"><i class="bi bi-envelope"></i></a>
+                    <a class="share-icon" id="fb" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+                    <a class="share-icon" id="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+                    <a class="share-icon" id="in" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+                    <button class="share-icon btn" id="copyLink" title="Copy link"><i class="bi bi-link-45deg"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap bundle FIRST -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- App script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        /* ===== DATA ===== */
+        const PD_DATA = {
+            'sidr-herbs':{title:'Rootboutique Sidr with Herbs',price:12.000,size:'250 g',hero:'images/image1.jpeg',desc:'A natural powdered mask of pure sidr leaves, supported by an effective herbal mix to improve scalp health and strengthen hair from the roots.',usage:['Mix two tablespoons of the powder with your herbal mix or mayonnaise.','Apply to roots only.','Use once a week.','Use as a mask, not as shampoo.'],note:'Avoid use in case of irritation or scalp sensitivity. If you have known allergies to any ingredients, consult your doctor before use.'},
+            'black-garlic':{title:'Rootboutique Black Garlic Oil',price:19.000,size:'120 ml',hero:'images/image.jpeg',desc:'A concentrated formula of black garlic and natural oils to thicken hair, reduce hair fall, and deeply moisturize the scalp.',usage:['Massage the scalp with fingertips for 5–10 minutes.','Leave for 1–2 hours then wash.','Use twice a week or as needed.'],note:'If allergic to garlic or essential oils, patch-test before use.'},
+            'herbal-oil':{title:'Herbal Hair Oil',price:9.900,size:'150 ml',hero:'images/image2.jpeg',desc:'A blend of herbal oils to nourish hair and soothe the scalp.',usage:['Gently massage the scalp.','Leave for 30–60 minutes.','Wash with shampoo.'],note:'Keep out of reach of children.'},
+            'shine-oil':{title:'Shine Hair Oil',price:7.500,size:'150 ml',hero:'images/image3.jpeg',desc:'Gives a healthy shine and reduces tangles.',usage:['Apply a small amount on dry or damp hair.','Do not rinse.'],note:'Avoid contact with eyes.'},
+            'herbal-sidr':{title:'Sidr with Herbs',price:6.000,size:'200 g',hero:'images/image4.jpg',desc:'A natural blend that boosts hair density.',usage:['Mix with warm water.','Apply to hair for 30 minutes.','Rinse well.'],note:'For external use only.'},
+            'scalp-sidr':{title:'Sidr Scalp Strengthener',price:5.500,size:'200 g',hero:'images/image5.jpeg',desc:'Supports scalp health and reduces hair fall.',usage:['Mix with water or coconut oil.','Apply to the scalp.','Wash after an hour.'],note:'Store in a dry place.'},
+            'special-product':{title:'Special Product',price:11.000,size:'100 ml',hero:'images/image.jpeg',desc:'Limited edition with a unique fragrance.',usage:['Use on dry hair.','Do not rinse.'],note:'For personal use only.'},
+            'special-package':{title:'Special Package',price:14.500,size:'Set',hero:'images/image1.jpeg',desc:'A curated set for complete care.',usage:['Use according to each product instructions in the package.'],note:'Limited quantity.'},
+            'oriental-perfume':{title:'Oriental Hair Perfume',price:9.000,size:'50 ml',hero:'images/image2.jpeg',desc:'A luxurious touch that lasts long.',usage:['Spray on hair from a 20 cm distance.'],note:'Keep away from flame sources.'},
+            'floral-perfume':{title:'Floral Hair Perfume',price:8.500,size:'50 ml',hero:'images/image6.jpeg',desc:'A soft floral fragrance.',usage:['Spray on hair after styling.'],note:'Keep away from children.'}
+        };
+
+        /* ===== View toggles ===== */
+        const rightPane = document.querySelector('.right-pane');
+        function showOnly(id){
+            ['mainContent','filtersView','menuView','productView','searchView','cartView','locationView'].forEach(v=>{
+                document.getElementById(v).classList.toggle('d-none', v!==id);
+            });
+            if(id!=='mainContent') rightPane.scrollTo({top:0, behavior:'smooth'});
+        }
+        window.showMenu = ()=>showOnly('menuView');
+        window.showFilters = ()=>showOnly('filtersView');
+        window.showMain = ()=>showOnly('mainContent');
+        window.showProduct = ()=>showOnly('productView');
+        window.showSearch = ()=>{ showOnly('searchView'); document.getElementById('searchInput').focus(); };
+        window.showCart = ()=>showOnly('cartView');
+        window.showLocation = ()=>showOnly('locationView');
+
+        /* ===== Filters helpers ===== */
+        window.clearSort=()=> document.querySelectorAll('input[name="sortBy"]').forEach(r=>r.checked=false);
+        window.clearFilters=()=> clearPrice();
+        function clearPrice(){ priceMin.value=1; priceMax.value=99; syncPrice(); }
+        const priceMin=document.getElementById('priceMin');
+        const priceMax=document.getElementById('priceMax');
+        window.syncPrice=function(){
+            let min=+priceMin.value, max=+priceMax.value;
+            if(min>max){ if(event && event.target===priceMin){ priceMax.value=min;} else{ priceMin.value=max;} }
+            document.getElementById('minVal').textContent=priceMin.value;
+            document.getElementById('maxVal').textContent=priceMax.value;
+        };
+        if(priceMin && priceMax) syncPrice();
+
+        /* ===== Sticky categories ===== */
+        const catBar=document.getElementById('catsBar');
+        const preCats=document.getElementById('preCats');
+        const catScroll=document.getElementById('catScroll');
+        if(catBar){
+            const sentinel=document.createElement('div'); sentinel.style.height='1px';
+            catBar.parentNode.insertBefore(sentinel, catBar);
+            new IntersectionObserver(entries=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting){ catBar.classList.remove('is-stuck'); preCats.classList.remove('hide-when-stuck'); }
+                    else{ catBar.classList.add('is-stuck'); preCats.classList.add('hide-when-stuck'); }
+                });
+            },{root:rightPane, threshold:1}).observe(sentinel);
+        }
+        function centerChip(chip){
+            const c=chip.getBoundingClientRect(), s=catScroll.getBoundingClientRect();
+            const delta=(c.left+c.right)/2 - (s.left+s.right)/2;
+            catScroll.scrollBy({left:delta, behavior:'smooth'});
+        }
+        function setActiveChip(sel){
+            document.querySelectorAll('.cat-chip').forEach(c=>c.classList.remove('active'));
+            const a=document.querySelector(`.cat-chip[data-target="${sel}"]`);
+            if(a){ a.classList.add('active'); centerChip(a); }
+        }
+        document.querySelectorAll('.cat-chip').forEach(chip=>{
+            chip.addEventListener('click',()=>{
+                const sel=chip.getAttribute('data-target');
+                const target=document.querySelector(sel);
+                if(target){
+                    const top=target.getBoundingClientRect().top - rightPane.getBoundingClientRect().top;
+                    rightPane.scrollBy({ top:top-8, behavior:'smooth' });
+                    setActiveChip(sel);
+                }
+            });
+        });
+        [...document.querySelectorAll('section[id]')].forEach(sec=>{
+            new IntersectionObserver(entries=>{
+                entries.forEach(entry=>{ if(entry.isIntersecting){ setActiveChip('#'+entry.target.id); } });
+            },{root:rightPane, threshold:.35}).observe(sec);
+        });
+
+        /* ===== Product Details open/qty ===== */
+        let pdKey=null, pdQty=1;
+        const el=sel=>document.querySelector(sel);
+        const fmt=n=>'KD ' + Number(n).toFixed(3);
+
+        window.openProduct=function(key){
+            const d=PD_DATA[key]; if(!d) return;
+            pdKey=key; pdQty=1;
+            el('#pdQty').textContent=pdQty;
+            el('#pdHero').src=d.hero;
+            el('#pdTitle').textContent=d.title;
+            el('#pdTitleHead').textContent=d.title;
+            el('#pdPrice').textContent=fmt(d.price);
+            el('#pdFinalPrice').textContent=fmt(d.price * pdQty);
+            el('#pdSize').textContent=d.size;
+            el('#pdDesc').textContent=d.desc;
+            const usage=el('#pdUsage'); usage.innerHTML='';
+            d.usage.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; usage.appendChild(li); });
+            el('#pdNote').textContent=d.note;
+            showProduct();
+        };
+        window.changeQty=function(delta){
+            pdQty=Math.max(1, pdQty + delta);
+            el('#pdQty').textContent=pdQty;
+            if(pdKey){ el('#pdFinalPrice').textContent=fmt(PD_DATA[pdKey].price * pdQty); }
+        };
+        document.querySelectorAll('.open-pd').forEach(btn=>{
+            btn.addEventListener('click', e=> openProduct(e.currentTarget.dataset.pd));
+        });
+
+        /* ===== SEARCH ===== */
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn   = document.getElementById('searchBtn');
+        const resultsBox  = document.getElementById('searchResults');
+        const emptyBox    = document.getElementById('searchEmpty');
+
+        function renderResults(q){
+            const query = (q||'').trim();
+            resultsBox.innerHTML='';
+            const items = Object.entries(PD_DATA).filter(([k,v]) =>
+                v.title.toLowerCase().includes(query.toLowerCase()) || v.desc.toLowerCase().includes(query.toLowerCase())
+            );
+            if(!query || items.length===0){
+                emptyBox.classList.remove('d-none');
+                return;
+            }
+            emptyBox.classList.add('d-none');
+            items.forEach(([key,v])=>{
+                const card = document.createElement('div');
+                card.className='search-card open-pd';
+                card.dataset.pd=key;
+                card.innerHTML = `
+        <img src="${v.hero}" alt="">
+        <div class="flex-grow-1">
+          <div class="ttl">${v.title}</div>
+          <div class="small text-muted text-truncate">${v.desc}</div>
+          <div class="prc mt-1">${fmt(v.price)}</div>
+        </div>`;
+                card.addEventListener('click',()=>openProduct(key));
+                resultsBox.appendChild(card);
+            });
+        }
+        if(searchBtn) searchBtn.addEventListener('click',()=>renderResults(searchInput.value));
+        if(searchInput) searchInput.addEventListener('input',()=>renderResults(searchInput.value));
+
+        /* ===== Share with a friend ===== */
+        const shareBtn = document.getElementById('shareBtn');
+        if(shareBtn){
+            const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
+            const linkToShare = location.href;
+            shareBtn.addEventListener('click', async () => {
+                const title = el('#pdTitle')?.textContent || 'Rootboutique';
+                try{
+                    if(navigator.share){
+                        await navigator.share({ title, url: linkToShare });
+                    }else{
+                        setShareLinks(linkToShare, title);
+                        shareModal.show();
+                    }
+                }catch(_){}
+            });
+        }
+        function setShareLinks(url, title){
+            document.getElementById('shareLinkBox').textContent = url;
+            document.getElementById('wapp').href  = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+            document.getElementById('gmail').href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(url);
+            document.getElementById('fb').href    = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            document.getElementById('x').href     = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url);
+            document.getElementById('in').href    = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+            document.getElementById('copyLink').onclick = async ()=>{
+                try{ await navigator.clipboard.writeText(url);
+                    document.getElementById('copyLink').innerHTML='<i class="bi bi-clipboard-check"></i>'; }
+                catch(e){}
+            };
+        }
+
+    });
+</script>
+</body>
+</html>

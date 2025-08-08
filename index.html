@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rootboutique Layout</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Cairo font for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Social Icons -->
+<div class="social-icons">
+    <a href="#"><img src="images/whatsapp.jpg" width="150" alt="WhatsApp"></a>
+    <a href="#"><img src="images/instagram.png" width="150" alt="Instagram"></a>
+    <a href="#"><img src="images/tiktok.png" width="150" alt="TikTok"></a>
+</div>
+
+<div class="container-fluid main-wrap">
+    <div class="row row-no-gutters">
+
+        <!-- Left hero -->
+        <div class="col-lg-6 p-0 position-relative hero-left">
+            <img src="images/background.png" class="img-fluid" alt="Rootboutique Bags">
+            <div class="hero-actions">
+                <a class="btn-round text-btn" href="english.html">EN</a>
+                <button class="btn-round" aria-label="Search" onclick="showSearch()"><i class="bi bi-search"></i></button>
+                <button class="btn-round" aria-label="Cart" onclick="showCart()"><i class="bi bi-bag"></i></button>
+                <button class="btn-round" aria-label="Menu" onclick="showMenu()"><i class="bi bi-list"></i></button>
+            </div>
+        </div>
+
+        <!-- Right side (scrolling pane) -->
+        <div class="col-lg-6 right-pane">
+
+            <!-- ============ MAIN CONTENT ============ -->
+            <div id="mainContent">
+                <!-- pre-categories (hide when sticky) -->
+                <div id="preCats" class="pre-cats">
+                    <div class="shop-header d-flex justify-content-end">
+                        <div class="shop-brand">
+                            <img class="logo" src="images/logo.png" alt="mt">
+                            <div>
+                                <h6 class="shop-title"> روت بوتيك</h6>
+                                <div class="shop-sub">شعرك في رعيتنا.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-section">
+                        <div class="delivery-actions">
+                            <button class="btn btn-outline-secondary ms-2">استلام</button>
+                            <button class="btn btn-outline-secondary">توصيل</button>
+                        </div>
+
+                        <div class="delivery-rows">
+                            <div class="delivery-row">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div>
+                                        <small>الى</small>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="link-green">تغيير</span>
+                                            <strong>اختر منطقة</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-link-45deg"></i>
+                                    <div><small>الى توصيل</small></div>
+                                </div>
+                            </div>
+
+                            <div class="delivery-row">
+                                <div class="d-flex align-items-center gap-2"><i class="bi bi-info-circle"></i></div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-clock"></i>
+                                    <div><small>أقرب وصول</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls-strip">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="showFilters()">التصفية و الترتيب</button>
+                        <div class="controls-icons">
+                            <div class="i-btn" title="ترتيب" onclick="showFilters()"><i class="bi bi-arrow-down-up"></i></div>
+                            <div class="i-btn" title="تصفية" onclick="showFilters()"><i class="bi bi-funnel"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /pre-cats -->
+
+                <!-- Sticky categories -->
+                <div class="categories-row" id="catsBar">
+                    <div class="cat-scroll" id="catScroll">
+                        <div class="cat-chip" data-target="#consult"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>فحص القـوة</span></div>
+                        <div class="cat-chip" data-target="#bestsellers"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>الأكثر مبيعاً</span></div>
+                        <div class="cat-chip" data-target="#henna"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>الحنة والسدر</span></div>
+                        <div class="cat-chip" data-target="#oils"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>زيوت الشعر</span></div>
+                        <div class="cat-chip" data-target="#special"><div class="thumb"><img src="images/category.jpg" alt=""></div><span>إصدار خاص</span></div>
+                        <div class="cat-chip" data-target="#fragrance"><div class="thumb"><img src="images/category2.jpg" alt=""></div><span>عطور الشعر</span></div>
+                    </div>
+                </div>
+
+                <!-- Sections -->
+                <section id="consult">
+                    <div class="section-title"><i class="bi bi-chevron-down"></i> <span>فحص القـوة</span></div>
+                    <div class="consult-card">
+                        <img class="consult-img" src="images/consult.jpg" alt="استشارة">
+                        <h5 class="consult-title mt-3">حجز موعد الاستشارة</h5>
+                        <p class="consult-desc mt-2">فحص فروة الرأس ومشاكل الشعر مع الاخصائية</p>
+                        <p class="price mt-2">دك 15.000</p>
+                        <button class="btn-add mt-2" type="button">أضف <span>+</span></button>
+                    </div>
+                </section>
+
+                <section id="bestsellers" class="mt-3">
+                    <div class="section-title"><span>الأكثر مبيعاً</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="black-garlic" src="images/image.jpeg" alt="">
+                                    <div class="product-title">زيت ميم تِرا بالثوم الأسود</div>
+                                    <p class="product-desc mt-2">زيت مُعزّز بتركيبة من الثوم الأسود والزيوت الطبيعية لتكثيف الشعر وتقليل التساقط.</p>
+                                    <p class="price mt-2">دك 19.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="black-garlic">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="sidr-herbs" src="images/image1.jpeg" alt="">
+                                    <div class="product-title">سدر ميم تِرا بالأعشاب</div>
+                                    <p class="product-desc mt-2">ماسك طبيعي مطحون من أوراق السدر النقية مدعّم بخلطة أعشاب فعّالة.</p>
+                                    <p class="price mt-2">دك 12.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="sidr-herbs">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="oils" class="mt-3">
+                    <div class="section-title"><span>زيوت الشعر</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="herbal-oil" src="images/image2.jpeg" alt="">
+                                    <div class="product-title">زيت عشبي مقوّي</div>
+                                    <p class="product-desc">مزيج زيوت عشبية لتغذية الشعر وتلطيف الفروة.</p>
+                                    <p class="price mt-2">دك 9.900</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="herbal-oil">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="shine-oil" src="images/image3.jpeg" alt="">
+                                    <div class="product-title">زيت لمعان الشعر</div>
+                                    <p class="product-desc">يعطي لمعة صحية ويقلل التشابك.</p>
+                                    <p class="price mt-2">دك 7.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="shine-oil">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="henna" class="mt-3">
+                    <div class="section-title"><span>الحنة والسدر</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="herbal-sidr" src="images/image4.jpg" alt="">
+                                    <div class="product-title">سدر بالأعشاب</div>
+                                    <p class="product-desc">خلطة طبيعية تعزز كثافة الشعر.</p>
+                                    <p class="price mt-2">دك 6.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="herbal-sidr">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="scalp-sidr" src="images/image5.jpeg" alt="">
+                                    <div class="product-title">سدر تقوية الفروة</div>
+                                    <p class="product-desc">يدعم صحة الفروة ويقلل التساقط.</p>
+                                    <p class="price mt-2">دك 5.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="scalp-sidr">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="special" class="mt-3">
+                    <div class="section-title"><span>إصدار خاص</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="special-product" src="images/image.jpeg" alt="">
+                                    <div class="product-title">مستحضر مميز</div>
+                                    <p class="product-desc">إصدار محدود برائحة فريدة.</p>
+                                    <p class="price mt-2">دك 11.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="special-product">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="special-package" src="images/image1.jpeg" alt="">
+                                    <div class="product-title">باقة خاصة</div>
+                                    <p class="product-desc">مجموعة مختارة للعناية الشاملة.</p>
+                                    <p class="price mt-2">دك 14.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="special-package">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="fragrance" class="mt-3 mb-4">
+                    <div class="section-title"><span>عطور الشعر</span></div>
+                    <div class="container-fluid px-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="oriental-perfume" src="images/image2.jpeg" alt="">
+                                    <div class="product-title">عطر شرقي للشعر</div>
+                                    <p class="product-desc">لمسة فاخرة تدوم طويلاً.</p>
+                                    <p class="price mt-2">دك 9.000</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="oriental-perfume">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card">
+                                    <img class="product-img open-pd" data-pd="floral-perfume" src="images/image6.jpeg" alt="">
+                                    <div class="product-title">عطر وردي للشعر</div>
+                                    <p class="product-desc">رائحة زهرية ناعمة.</p>
+                                    <p class="price mt-2">دك 8.500</p>
+                                    <button class="btn-add w-100 mt-2 open-pd" data-pd="floral-perfume">أضف <span>+</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- sticky CTA (matches first screenshot) -->
+                <div class="sticky-region-cta">
+                    <button class="btn-region" type="button" onclick="showLocation()">اختر منطقتك</button>
+                </div>
+            </div>
+            <!-- ============ /MAIN CONTENT ============ -->
+
+            <!-- ============ FILTERS VIEW ============ -->
+            <div id="filtersView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6>التصفية و الترتيب</h6><span></span>
+                </div>
+
+                <div class="filters-block-title">
+                    <div class="d-flex align-items-center gap-2"><i class="bi bi-arrow-down-up"></i><span>الترتيب</span></div>
+                    <span class="filters-clear" onclick="clearSort()">امسح</span>
+                </div>
+                <div class="px-2">
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="priceAsc"><span>الأقل إلى الأعلى</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="priceDesc"><span>الأعلى إلى الأقل</span></label>
+                        </div>
+                        <div class="sort-right-label">السعر</div>
+                    </div>
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="nameAZ"><span>أ - ي</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="nameZA"><span>ي - أ</span></label>
+                        </div>
+                        <div class="sort-right-label">الاسم</div>
+                    </div>
+                    <div class="sort-row">
+                        <div class="text-center">
+                            <label class="custom-radio me-3"><input type="radio" name="sortBy" value="dateNew"><span>الأحدث</span></label>
+                            <label class="custom-radio"><input type="radio" name="sortBy" value="dateOld" checked><span>الأقدم</span></label>
+                        </div>
+                        <div class="sort-right-label">التاريخ</div>
+                    </div>
+                </div>
+
+                <div class="filters-block-title">
+                    <div class="d-flex align-items-center gap-2"><i class="bi bi-funnel"></i><span>التصفية</span></div>
+                    <span class="filters-clear" onclick="clearFilters()">امسح</span>
+                </div>
+
+                <div class="acc acc-open">
+                    <div class="acc-row" onclick="this.parentElement.classList.toggle('acc-open')">
+                        <div class="fw-bold">الأصناف</div><i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="acc-body">
+                        <div class="cats-list">
+                            <div class="cat-item">فحص القـوة</div><div class="cat-item">الأكثر مبيعاً</div>
+                            <div class="cat-item">إصدار خاص</div><div class="cat-item">الحنة والسدر</div>
+                            <div class="cat-item">زيوت الشعر</div><div class="cat-item">توتك الاعشاب للشعر</div>
+                            <div class="cat-item">باكجات</div><div class="cat-item">اكسسوارات الشعر</div>
+                            <div class="cat-item">عطور الشعر</div><div class="cat-item">تنظيف فروة الرأس</div>
+                            <div class="cat-item">ميتي للتجربة</div><div class="cat-item">العناية بالوجه</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc acc-open">
+                    <div class="acc-row" onclick="this.parentElement.classList.toggle('acc-open')">
+                        <div class="fw-bold">السعر</div><i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="acc-body">
+                        <div class="price-slider">
+                            <div class="range-wrap">
+                                <input id="priceMin" type="range" min="1" max="99" value="1" oninput="syncPrice()">
+                                <input id="priceMax" type="range" min="1" max="99" value="99" oninput="syncPrice()">
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold"><span id="minVal">1</span><span id="maxVal">99</span></div>
+                        </div>
+                        <div class="filters-actions">
+                            <button class="btn btn-light" onclick="clearPrice()">مسح</button>
+                            <button class="btn btn-outline-secondary" disabled>تطبيق</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filters-block-title" style="justify-content:flex-start">المنتجات المتاحة</div>
+            </div>
+            <!-- ============ /FILTERS VIEW ============ -->
+
+            <!-- ============ MENU VIEW ============ -->
+            <div id="menuView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6>القائمة</h6><span></span>
+                </div>
+                <div class="px-2">
+                    <div class="filters-block-title">روابط</div>
+                    <div class="px-3">
+                        <div class="py-3 border-bottom">سلة مشترياتي</div>
+                        <div class="py-3 border-bottom">القائمة</div>
+                        <div class="py-3">طلباتي</div>
+                    </div>
+                    <div class="filters-block-title">تسجيل الدخول بواسطة</div>
+                    <div class="px-3">
+                        <div class="py-3 border-bottom">ايميل</div>
+                        <div class="py-3 border-bottom">آبل</div>
+                        <div class="py-3">جوجل</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============ /MENU VIEW ============ -->
+
+            <!-- ============ PRODUCT DETAILS VIEW ============ -->
+            <div id="productView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6 id="pdTitleHead">تفاصيل المنتج</h6><span></span>
+                </div>
+
+                <!-- Hero image -->
+                <img id="pdHero" class="pd-hero" src="" alt="">
+
+                <!-- Title / price / qty -->
+                <div class="px-3 pt-3 pb-2">
+                    <div class="d-flex align-items-start justify-content-between flex-wrap">
+                        <div class="mb-2">
+                            <h5 id="pdTitle" class="pd-title mb-1"></h5>
+                            <div id="pdPrice" class="price">دك 0.000</div>
+                        </div>
+                        <div class="mt-1">
+                            <div class="qty-wrap">
+                                <button type="button" onclick="changeQty(-1)">–</button>
+                                <span id="pdQty">1</span>
+                                <button type="button" onclick="changeQty(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description blocks -->
+                <div class="pd-sec">
+                    <h6>الوصف</h6>
+                    <div class="mb-2"><strong class="ms-2">الحجم:</strong> <span id="pdSize">—</span></div>
+                    <div class="mb-2"><strong class="ms-2">الوصف:</strong> <span id="pdDesc">—</span></div>
+                    <div class="mb-2"><strong class="ms-2">طريقة الاستخدام:</strong></div>
+                    <ul id="pdUsage" class="pd-bullets"></ul>
+                    <div class="mt-3"><strong>تنبيه مهم:</strong>
+                        <div id="pdNote" class="mt-1"></div>
+                    </div>
+                </div>
+
+                <!-- Gift -->
+                <div class="pd-sec">
+                    <h6>Gift</h6>
+                    <div class="pd-gift-card d-flex align-items-center justify-content-between">
+                        <div>Gift Wrapping</div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="text-success fw-bold">+ دك 2.000</div>
+                            <input id="giftWrap" type="checkbox">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related -->
+                <div class="pd-sec">
+                    <h6>أضف الى طلبك …</h6>
+                    <div class="related-scroll" id="relatedStrip">
+                        <div class="related-card product-card">
+                            <img class="product-img open-pd" data-pd="sidr-herbs" src="images/image1.jpeg" alt="">
+                            <div class="product-title">سدر بالأعشاب</div>
+                            <p class="price mt-2">دك 12.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img open-pd" data-pd="black-garlic" src="images/image.jpeg" alt="">
+                            <div class="product-title">زيت الثوم الأسود</div>
+                            <p class="price mt-2">دك 19.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image2.jpeg" alt="">
+                            <div class="product-title">زيت عشبي مقوّي</div>
+                            <p class="price mt-2">دك 9.900</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image2.jpeg" alt="">
+                            <div class="product-title">عطر شرقي للشعر</div>
+                            <p class="price mt-2">دك 9.000</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image5.jpeg" alt="">
+                            <div class="product-title">سدر تقوية الفروة</div>
+                            <p class="price mt-2">دك 5.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image1.jpeg" alt="">
+                            <div class="product-title">باقة خاصة</div>
+                            <p class="price mt-2">دك 14.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image3.jpeg" alt="">
+                            <div class="product-title">زيت لمعان الشعر</div>
+                            <p class="price mt-2">دك 7.500</p>
+                        </div>
+                        <div class="related-card product-card">
+                            <img class="product-img" src="images/image6.jpeg" alt="">
+                            <div class="product-title">عطر وردي للشعر</div>
+                            <p class="price mt-2">دك 8.500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share strip -->
+                <div class="share-strip">
+                    <button id="shareBtn" class="share-btn" type="button">
+                        <i class="bi bi-share"></i>
+                        <span>شارك مع صديق</span>
+                    </button>
+                </div>
+
+                <!-- Sticky bottom add bar -->
+                <div class="sticky-addbar">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="price" id="pdFinalPrice">دك 0.000</div>
+                    </div>
+                    <button class="btn-green">أضف إلى السلة</button>
+                </div>
+            </div>
+            <!-- ============ /PRODUCT DETAILS VIEW ============ -->
+
+            <!-- ============ SEARCH VIEW ============ -->
+            <div id="searchView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6>ابحث…</h6><span></span>
+                </div>
+                <div class="search-wrap">
+                    <div class="input-group">
+                        <input id="searchInput" type="search" class="form-control" placeholder="ابحث عن منتج">
+                        <button class="btn btn-outline-secondary" id="searchBtn"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <div id="searchResults" class="search-list"></div>
+                <div id="searchEmpty" class="empty-wrap">
+                    <div class="empty-icon"><i class="bi bi-search"></i></div>
+                    ابحث عن منتج
+                </div>
+            </div>
+            <!-- ============ /SEARCH VIEW ============ -->
+
+            <!-- ============ CART VIEW ============ -->
+            <div id="cartView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6>سلة المشتريات</h6><span></span>
+                </div>
+
+                <div class="px-3 py-3 border-bottom">
+                    <label class="form-label mb-2">العروض</label>
+                    <input type="text" class="form-control" placeholder="ادخل رمز الكوبون">
+                </div>
+
+                <div class="empty-wrap">
+                    <div class="empty-icon">
+                        <img src="images/basket.png" alt="cart img" >
+                    </div>
+                    <div class="mb-2 fw-bold">سلة مشترياتك فارغة</div>
+                    <div class="mb-3">أضف بعض المنتجات إلى السلة</div>
+                    <button class="btn btn-outline-success" onclick="showMain()">ابدأ التسوق</button>
+                </div>
+            </div>
+            <!-- ============ /CART VIEW ============ -->
+            <!-- ============ LOCATION VIEW (NEW – matches second screenshot) ============ -->
+            <div id="locationView" class="d-none">
+                <div class="panel-header">
+                    <button class="btn btn-light" onclick="showMain()" aria-label="رجوع"><i class="bi bi-chevron-right"></i></button>
+                    <h6>اختر المنطقة</h6><span></span>
+                </div>
+
+                <div class="wrap">
+                    <!-- method -->
+                    <div class="block-title">الطريقة</div>
+                    <div class="method-row">
+                        <div class="method-card" id="pickMethod">
+                            <i class="bi bi-person-walking"></i><span class="lbl">استلام</span>
+                        </div>
+                        <div class="method-card active" id="delMethod">
+                            <i class="bi bi-car-front"></i><span class="lbl">توصيل</span>
+                        </div>
+                    </div>
+
+                    <!-- country -->
+                    <div class="block-title">الدولة</div>
+                    <div class="country-row">
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/xx.png" alt="World"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/bh.png" alt="Bahrain"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/sa.png" alt="Saudi"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/ae.png" alt="UAE"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/om.png" alt="Oman"></div>
+                        <div class="flag-pill"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"></div>
+                        <div class="flag-pill active"><img src="https://flagcdn.com/w40/kw.png" alt="Kuwait"></div>
+                    </div>
+
+                    <!-- address/search -->
+                    <div class="block-title">العنوان</div>
+                    <div class="addr-input mb-2">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="... ابحث">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- governorates -->
+                    <div class="block-title">المحافظة</div>
+
+                    <!-- REPLACE your .gov-list with this: -->
+                    <div class="gov-list">
+
+                        <!-- العاصمة -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>العاصمة</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">ضاحية عبدالله السالم</button>
+                                <button class="area">العديلية</button>
+                                <button class="area">النزهة</button>
+                                <button class="area">حدائق السور</button>
+                                <button class="area">بنيد القار</button>
+                                <button class="area">الدعية</button>
+                                <button class="area">الدسمة</button>
+                                <button class="area">دسمان</button>
+                                <button class="area">الدوحة</button>
+                                <button class="area">شاليهات الدوحة</button>
+                                <button class="area">الفيحاء</button>
+                                <button class="area">غرناطة</button>
+                                <button class="area">ضاحية حصة المبارك</button>
+                                <button class="area">جابر الأحمد</button>
+                                <button class="area">الجزيرة</button>
+                                <button class="area">القيروان</button>
+                                <button class="area">كيفان</button>
+                                <button class="area">الخالدية</button>
+                            </div>
+                        </details>
+
+                        <!-- الأحمدي -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>الأحمدي</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">الفحيحيل</button>
+                                <button class="area">المنقف</button>
+                                <button class="area">الظهر</button>
+                                <button class="area">هدية</button>
+                                <button class="area">أبوفطيرة</button>
+                            </div>
+                        </details>
+
+                        <!-- مبارك الكبير -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>مبارك الكبير</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">صبحان</button>
+                                <button class="area">القصور</button>
+                                <button class="area">العدان</button>
+                                <button class="area">القرين</button>
+                            </div>
+                        </details>
+
+                        <!-- حولي -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>حولي</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">السالمية</button>
+                                <button class="area">الجابرية</button>
+                                <button class="area">حولي</button>
+                                <button class="area">بيان</button>
+                            </div>
+                        </details>
+
+                        <!-- الجهراء -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>الجهراء</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">الجهراء</button>
+                                <button class="area">الصليبية</button>
+                                <button class="area">النسيم</button>
+                            </div>
+                        </details>
+
+                        <!-- الفروانية -->
+                        <details class="gov">
+                            <summary class="gov-item">
+                                <span>الفروانية</span>
+                                <i class="bi bi-chevron-down chev"></i>
+                            </summary>
+                            <div class="areas">
+                                <button class="area">الفروانية</button>
+                                <button class="area">خيطان</button>
+                                <button class="area">العمرية</button>
+                                <button class="area">الرابية</button>
+                            </div>
+                        </details>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Share fallback modal -->
+<div class="modal fade share-modal" id="shareModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Share link</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 small text-muted" id="shareLinkBox"></div>
+                <div class="d-flex flex-wrap gap-3">
+                    <a class="share-icon" id="wapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+                    <a class="share-icon" id="gmail" target="_blank" rel="noopener"><i class="bi bi-envelope"></i></a>
+                    <a class="share-icon" id="fb" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+                    <a class="share-icon" id="x" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+                    <a class="share-icon" id="in" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+                    <button class="share-icon btn" id="copyLink" title="نسخ الرابط"><i class="bi bi-link-45deg"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap bundle FIRST -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- App script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        /* ===== DATA ===== */
+        const PD_DATA = {
+            'sidr-herbs':{title:'سدر ميم تِرا بالأعشاب',price:12.000,size:'250 غرام',hero:'images/image1.jpeg',desc:'ماسك طبيعي مطحون من أوراق السدر النقية، مدعّم بخلطة أعشاب فعّالة يعزز صحة فروة الرأس ويقوّي الشعر من الجذور.',usage:['يُخلط مقدار ملعقتين من المسحوق مع توتك الأعشاب أو المايونيز.','يوضع على الجذور فقط.','يُستخدم مرة واحدة في الأسبوع.','يُستخدم كمسك، وليس كشامبو.'],note:'تجنّبي الاستخدام في حال وجود تهيّج أو حساسية في فروة الرأس. في حال وجود حساسية معروفة تجاه أي من المكونات، يُنصح بمراجعة الطبيب قبل الاستخدام.'},
+            'black-garlic':{title:'زيت ميم تِرا بالثوم الأسود',price:19.000,size:'120 مل',hero:'images/image.jpeg',desc:'تركيبة مركزة من الثوم الأسود وزيوت طبيعية لتكثيف الشعر وتقليل التساقط وترطيب الفروة بعمق.',usage:['تُدلك فروة الرأس بأطراف الأصابع 5–10 دقائق.','يترك ساعة إلى ساعتين ثم يُغسل.','يُستخدم مرتين أسبوعياً أو حسب الحاجة.'],note:'في حال الحساسية من الثوم أو الزيوت العطرية، اختبري المنتج على منطقة صغيرة قبل الاستخدام.'},
+            'herbal-oil':{title:'زيت عشبي مقوّي',price:9.900,size:'150 مل',hero:'images/image2.jpeg',desc:'مزيج زيوت عشبية لتغذية الشعر وتلطيف الفروة.',usage:['تُدلك الفروة بلطف.','يترك 30–60 دقيقة.','يغسل بالشامبو.'],note:'يحفظ بعيداً عن متناول الأطفال.'},
+            'shine-oil':{title:'زيت لمعان الشعر',price:7.500,size:'150 مل',hero:'images/image3.jpeg',desc:'يعطي لمعة صحية ويقلل التشابك.',usage:['توضع كمية صغيرة على الشعر الجاف أو الرطب.','لا يشطف.'],note:'تجنب ملامسة العينين.'},
+            'herbal-sidr':{title:'سدر بالأعشاب',price:6.000,size:'200 غرام',hero:'images/image4.jpg',desc:'خلطة طبيعية تعزز كثافة الشعر.',usage:['يخلط مع الماء الدافئ.','يوضع على الشعر 30 دقيقة.','يغسل جيداً.'],note:'للاستخدام الخارجي فقط.'},
+            'scalp-sidr':{title:'سدر تقوية الفروة',price:5.500,size:'200 غرام',hero:'images/image5.jpeg',desc:'يدعم صحة الفروة ويقلل التساقط.',usage:['يخلط مع الماء أو زيت جوز الهند.','يوضع على الفروة.','يغسل بعد ساعة.'],note:'يخزن في مكان جاف.'},
+            'special-product':{title:'مستحضر مميز',price:11.000,size:'100 مل',hero:'images/image.jpeg',desc:'إصدار محدود برائحة فريدة.',usage:['يستخدم على الشعر الجاف.','لا يشطف.'],note:'للاستخدام الشخصي فقط.'},
+            'special-package':{title:'باقة خاصة',price:14.500,size:'مجموعة',hero:'images/image1.jpeg',desc:'مجموعة مختارة للعناية الشاملة.',usage:['يستخدم حسب تعليمات كل منتج في الباقة.'],note:'محدود الكمية.'},
+            'oriental-perfume':{title:'عطر شرقي للشعر',price:9.000,size:'50 مل',hero:'images/image2.jpeg',desc:'لمسة فاخرة تدوم طويلاً.',usage:['يرش على الشعر من مسافة 20 سم.'],note:'يبعد عن مصادر اللهب.'},
+            'floral-perfume':{title:'عطر وردي للشعر',price:8.500,size:'50 مل',hero:'images/image6.jpeg',desc:'رائحة زهرية ناعمة.',usage:['يرش على الشعر بعد التصفيف.'],note:'يبعد عن متناول الأطفال.'}
+        };
+
+        /* ===== View toggles ===== */
+        const rightPane = document.querySelector('.right-pane');
+        function showOnly(id){
+            ['mainContent','filtersView','menuView','productView','searchView','cartView','locationView'].forEach(v=>{
+                document.getElementById(v).classList.toggle('d-none', v!==id);
+            });
+            if(id!=='mainContent') rightPane.scrollTo({top:0, behavior:'smooth'});
+        }
+        window.showMenu = ()=>showOnly('menuView');
+        window.showFilters = ()=>showOnly('filtersView');
+        window.showMain = ()=>showOnly('mainContent');
+        window.showProduct = ()=>showOnly('productView');
+        window.showSearch = ()=>{ showOnly('searchView'); document.getElementById('searchInput').focus(); };
+        window.showCart = ()=>showOnly('cartView');
+        window.showLocation = ()=>showOnly('locationView');
+
+
+        /* ===== Filters helpers (unchanged) ===== */
+        window.clearSort=()=> document.querySelectorAll('input[name="sortBy"]').forEach(r=>r.checked=false);
+        window.clearFilters=()=> clearPrice();
+        function clearPrice(){ priceMin.value=1; priceMax.value=99; syncPrice(); }
+        const priceMin=document.getElementById('priceMin');
+        const priceMax=document.getElementById('priceMax');
+        window.syncPrice=function(){
+            let min=+priceMin.value, max=+priceMax.value;
+            if(min>max){ if(event && event.target===priceMin){ priceMax.value=min;} else{ priceMin.value=max;} }
+            document.getElementById('minVal').textContent=priceMin.value;
+            document.getElementById('maxVal').textContent=priceMax.value;
+        };
+        if(priceMin && priceMax) syncPrice();
+
+        /* ===== Sticky categories (unchanged) ===== */
+        const catBar=document.getElementById('catsBar');
+        const preCats=document.getElementById('preCats');
+        const catScroll=document.getElementById('catScroll');
+        if(catBar){
+            const sentinel=document.createElement('div'); sentinel.style.height='1px';
+            catBar.parentNode.insertBefore(sentinel, catBar);
+            new IntersectionObserver(entries=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting){ catBar.classList.remove('is-stuck'); preCats.classList.remove('hide-when-stuck'); }
+                    else{ catBar.classList.add('is-stuck'); preCats.classList.add('hide-when-stuck'); }
+                });
+            },{root:rightPane, threshold:1}).observe(sentinel);
+        }
+        function centerChip(chip){
+            const c=chip.getBoundingClientRect(), s=catScroll.getBoundingClientRect();
+            const delta=(c.left+c.right)/2 - (s.left+s.right)/2;
+            catScroll.scrollBy({left:delta, behavior:'smooth'});
+        }
+        function setActiveChip(sel){
+            document.querySelectorAll('.cat-chip').forEach(c=>c.classList.remove('active'));
+            const a=document.querySelector(`.cat-chip[data-target="${sel}"]`);
+            if(a){ a.classList.add('active'); centerChip(a); }
+        }
+        document.querySelectorAll('.cat-chip').forEach(chip=>{
+            chip.addEventListener('click',()=>{
+                const sel=chip.getAttribute('data-target');
+                const target=document.querySelector(sel);
+                if(target){
+                    const top=target.getBoundingClientRect().top - rightPane.getBoundingClientRect().top;
+                    rightPane.scrollBy({ top:top-8, behavior:'smooth' });
+                    setActiveChip(sel);
+                }
+            });
+        });
+        [...document.querySelectorAll('section[id]')].forEach(sec=>{
+            new IntersectionObserver(entries=>{
+                entries.forEach(entry=>{ if(entry.isIntersecting){ setActiveChip('#'+entry.target.id); } });
+            },{root:rightPane, threshold:.35}).observe(sec);
+        });
+
+        /* ===== Product Details open/qty ===== */
+        let pdKey=null, pdQty=1;
+        const el=sel=>document.querySelector(sel);
+        const fmt=n=>'دك ' + Number(n).toFixed(3);
+
+        window.openProduct=function(key){
+            const d=PD_DATA[key]; if(!d) return;
+            pdKey=key; pdQty=1;
+            el('#pdQty').textContent=pdQty;
+            el('#pdHero').src=d.hero;
+            el('#pdTitle').textContent=d.title;
+            el('#pdTitleHead').textContent=d.title;
+            el('#pdPrice').textContent=fmt(d.price);
+            el('#pdFinalPrice').textContent=fmt(d.price * pdQty);
+            el('#pdSize').textContent=d.size;
+            el('#pdDesc').textContent=d.desc;
+            const usage=el('#pdUsage'); usage.innerHTML='';
+            d.usage.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; usage.appendChild(li); });
+            el('#pdNote').textContent=d.note;
+            showProduct();
+        };
+        window.changeQty=function(delta){
+            pdQty=Math.max(1, pdQty + delta);
+            el('#pdQty').textContent=pdQty;
+            if(pdKey){ el('#pdFinalPrice').textContent=fmt(PD_DATA[pdKey].price * pdQty); }
+        };
+        document.querySelectorAll('.open-pd').forEach(btn=>{
+            btn.addEventListener('click', e=> openProduct(e.currentTarget.dataset.pd));
+        });
+
+        /* ===== SEARCH ===== */
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn   = document.getElementById('searchBtn');
+        const resultsBox  = document.getElementById('searchResults');
+        const emptyBox    = document.getElementById('searchEmpty');
+
+        function renderResults(q){
+            const query = (q||'').trim();
+            resultsBox.innerHTML='';
+            const items = Object.entries(PD_DATA).filter(([k,v]) =>
+                v.title.includes(query) || v.desc.includes(query)
+            );
+            if(!query || items.length===0){
+                emptyBox.classList.remove('d-none');
+                return;
+            }
+            emptyBox.classList.add('d-none');
+            items.forEach(([key,v])=>{
+                const card = document.createElement('div');
+                card.className='search-card open-pd';
+                card.dataset.pd=key;
+                card.innerHTML = `
+        <img src="${v.hero}" alt="">
+        <div class="flex-grow-1">
+          <div class="ttl">${v.title}</div>
+          <div class="small text-muted text-truncate">${v.desc}</div>
+          <div class="prc mt-1">${fmt(v.price)}</div>
+        </div>`;
+                card.addEventListener('click',()=>openProduct(key));
+                resultsBox.appendChild(card);
+            });
+        }
+        if(searchBtn) searchBtn.addEventListener('click',()=>renderResults(searchInput.value));
+        if(searchInput) searchInput.addEventListener('input',()=>renderResults(searchInput.value));
+
+        /* ===== Share with a friend ===== */
+        const shareBtn = document.getElementById('shareBtn');
+        if(shareBtn){
+            const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
+            const linkToShare = location.href;
+            shareBtn.addEventListener('click', async () => {
+                const title = el('#pdTitle')?.textContent || 'Rootboutique';
+                try{
+                    if(navigator.share){
+                        await navigator.share({ title, url: linkToShare });
+                    }else{
+                        setShareLinks(linkToShare, title);
+                        shareModal.show();
+                    }
+                }catch(_){} // user cancelled
+            });
+        }
+        function setShareLinks(url, title){
+            document.getElementById('shareLinkBox').textContent = url;
+            document.getElementById('wapp').href  = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+            document.getElementById('gmail').href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(url);
+            document.getElementById('fb').href    = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            document.getElementById('x').href     = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url);
+            document.getElementById('in').href    = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+            document.getElementById('copyLink').onclick = async ()=>{
+                try{ await navigator.clipboard.writeText(url);
+                    document.getElementById('copyLink').innerHTML='<i class="bi bi-clipboard-check"></i>'; }
+                catch(e){}
+            };
+        }
+
+    });
+</script>
+</body>
+</html>
